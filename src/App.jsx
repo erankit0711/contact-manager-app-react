@@ -1,7 +1,8 @@
+import ContactManagerPage from "./components/ContactManagerPage"
 
 function App() {
   return (
-    <h1>Hello World!</h1>
+    <ContactManagerPage />
   )
 }
 
@@ -12,8 +13,8 @@ export default App
 /*Components
 -> ContactManagerPage 
     -> Header
-    -> Title
     -> Container
+        -> Title
         -> Search
         -> AddContact
         -> Table

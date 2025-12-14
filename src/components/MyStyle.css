@@ -1,0 +1,33 @@
+.contact-page{
+    width: 100%;
+}
+
+.header {
+  height: 60px; 
+  width: 100%;
+  background: linear-gradient(90deg, #0b66ff 0%, #00c6c6 100%);
+  display: flex;
+  align-items: center; /* vertical center */
+  box-sizing: border-box;
+}
+
+
+.header-logo {
+  height: 50px; 
+  width: 150px;
+  margin-left: 200px;
+}
+
+.table-container{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.add-contact{
+    position: relative;
+    left: 750px;
+}
+
+table{
+    width: 100%;
+}
