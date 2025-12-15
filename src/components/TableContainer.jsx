@@ -3,7 +3,7 @@ import contactList from "./contactList";
 
 function TableContainer(props){
     return (
-        <div>
+        <div className="table-container">
             <table>
                     <thead>
                         <tr>

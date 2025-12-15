@@ -5,10 +5,11 @@ import AddContactButton from "./AddContactButton";
 import Search from "./Search";
 import { useState } from "react";
 import AddContactForm from "./AddContactForm";
+import contactList from "./contactList";
 
 function ContactManagerPage(){
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [contactData, setContactData] = useState([]);
+    const [contactData, setContactData] = useState(contactList);
     const [searchTerm, setSearchTerm] = useState("");
 
     const filteredContactData = contactData.filter(contact =>
@@ -23,12 +24,14 @@ function ContactManagerPage(){
             <div className="header">
                 <img src={logo} alt="ofbusiness-logo" className="header-logo" />
             </div>
-            <div className="table-container">
-                <h1>Contact Manager</h1>
-                <Search setSearchTerm={setSearchTerm}/>
-                {isModalOpen && <AddContactForm setContactData={setContactData}/>}
-                <AddContactButton isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
-                <TableContainer contactData={filteredContactData} setContactData={setContactData}/>
+            <div className="container">
+                <h2>Contact Manager</h2>
+                <div className="container-bottom">
+                    <Search setSearchTerm={setSearchTerm}/>
+                    <AddContactButton isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
+                    <TableContainer contactData={filteredContactData} setContactData={setContactData}/>
+                </div>
+                {isModalOpen && <AddContactForm setContactData={setContactData} setIsModalOpen={setIsModalOpen}/>}
             </div>
         </div>
     )

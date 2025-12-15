@@ -11,8 +11,12 @@ function TableEntry(props){
             <td>{props.email}</td>
             <td>{props.addressLine1}, {props.addressLine2}, {props.state}. {props.pincode}</td>
             <td>
-                <button type="button">Edit</button>
-                <button type="button" onClick={handleDelete}>Delete</button>
+                <button className="action-button" type="button"> ✏️
+                    <span>Edit</span>
+                </button>
+                <button className="action-button" type="button" onClick={handleDelete}>🗑️
+                    <span>Delete</span>
+                </button>
             </td>
         </tr>
     )

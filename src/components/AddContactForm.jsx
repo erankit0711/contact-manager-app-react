@@ -22,10 +22,11 @@ function AddContactForm(props){
         props.setContactData((prevValue) =>{
             return [...prevValue, contact];
         })
+        props.setIsModalOpen(false);
     }
 
     return(
-        <div>
+        <div className="modal-overlay">
             <h1>Add Contact</h1>
 
             <form>
@@ -45,7 +46,7 @@ function AddContactForm(props){
             <input type="number" name="pincode" onChange={handleChange} required/>
             </form>
 
-            <button type="button" name="cancel-button">Cancel</button>
+            <button type="button" name="cancel-button" onClick={()=>props.setIsModalOpen(false)}>Cancel</button>
             <button type="submit" name="submit-button" onClick={handleSubmit}>Submit</button>
         </div>
     )
