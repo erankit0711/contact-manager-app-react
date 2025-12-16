@@ -1,5 +1,4 @@
 import TableEntry from "./TableEntry";
-import contactList from "./contactList";
 
 function TableContainer(props){
     return (

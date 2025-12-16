@@ -7,17 +7,3 @@ function App() {
 }
 
 export default App
-
-
-
-/*Components
--> ContactManagerPage 
-    -> Header
-    -> Container
-        -> Title
-        -> Search
-        -> AddContact
-        -> Table
-            -> Edit
-            -> Delete
-*/

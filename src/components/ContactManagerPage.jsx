@@ -1,11 +1,11 @@
 import "./MyStyle.css";
 import logo from "../assets/ofbusinesslogo.png";
-import TableContainer from "./TableContainer";
-import AddContactButton from "./AddContactButton";
-import Search from "./Search";
+import TableContainer from "./Table/TableContainer";
+import AddContactButton from "./AddContactButton/AddContactButton";
+import Search from "./Search/Search";
 import { useState } from "react";
-import AddContactForm from "./AddContactForm";
-import contactList from "./contactList";
+import AddContactForm from "./AddContactForm/AddContactForm";
+import contactList from "../Utils/contactList";
 
 function ContactManagerPage(){
     const [isModalOpen, setIsModalOpen] = useState(false);
