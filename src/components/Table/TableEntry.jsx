@@ -1,13 +1,15 @@
 import { Trash2 } from 'lucide-react';
 import { Pencil } from 'lucide-react';
 import "./Table.css"
+import { useDispatch } from 'react-redux';
+import { deleteContact } from '../../redux/contacts/contactSlice';
 
 function TableEntry(props){
+    const dispatch = useDispatch();
     function handleDelete() {
-        props.setContactData(prevValue =>
-        prevValue.filter(contact => contact.email !== props.email)
-    );
-  }
+        dispatch(deleteContact(props.email));
+    }
+    
     return (
         <tr>
             <td>{props.name}</td>

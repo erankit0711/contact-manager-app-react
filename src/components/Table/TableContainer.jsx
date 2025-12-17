@@ -1,6 +1,13 @@
+import { useSelector } from "react-redux";
 import TableEntry from "./TableEntry";
 
 function TableContainer(props){
+    const contacts = useSelector(state => state.contact.value)
+    const filteredContactData = contacts.filter(contact =>
+          contact.name.toLowerCase().includes(props.searchTerm.toLowerCase()) ||
+          contact.contactNumber.includes(props.searchTerm) ||
+          contact.email.toLowerCase().includes(props.searchTerm.toLowerCase())
+      )
     return (
         <div className="table-container">
             <table>
@@ -14,7 +21,7 @@ function TableContainer(props){
                         </tr>
                     </thead>
                     <tbody>
-                        {props.contactData.map((contact)=>{
+                        {filteredContactData.map((contact)=>{
                             return (
                                 <TableEntry 
                                   name={contact.name} 

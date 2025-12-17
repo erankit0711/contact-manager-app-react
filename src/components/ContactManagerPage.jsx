@@ -9,15 +9,7 @@ import contactList from "../Utils/contactList";
 
 function ContactManagerPage(){
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [contactData, setContactData] = useState(contactList);
     const [searchTerm, setSearchTerm] = useState("");
-
-    const filteredContactData = contactData.filter(contact =>
-            contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            contact.contactNumber.includes(searchTerm) ||
-            contact.email.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-
 
     return (
         <div className="contact-page">
@@ -29,9 +21,9 @@ function ContactManagerPage(){
                 <div className="container-bottom">
                     <Search setSearchTerm={setSearchTerm}/>
                     <AddContactButton isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
-                    <TableContainer contactData={filteredContactData} setContactData={setContactData}/>
+                    <TableContainer searchTerm={searchTerm}/>
                 </div>
-                {isModalOpen && <AddContactForm setContactData={setContactData} setIsModalOpen={setIsModalOpen}/>}
+                {isModalOpen && <AddContactForm setIsModalOpen={setIsModalOpen}/>}
             </div>
         </div>
     )

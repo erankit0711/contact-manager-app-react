@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./AddContactForm.css"; 
+import { useDispatch } from "react-redux";
+import { addContact } from "../../redux/contacts/contactSlice";
 
 function AddContactForm(props) {
+    const dispatch = useDispatch();
     const [contact, setContact] = useState({
         name: "",
         contactNumber: "",
@@ -21,14 +24,16 @@ function AddContactForm(props) {
 
     function handleSubmit(event) {
         event.preventDefault(); 
-        props.setContactData((prevValue) => {
-            return [...prevValue, contact];
-        });
+        // props.setContactData((prevValue) => {
+        //     return [...prevValue, contact];
+        // });
+        dispatch(addContact(contact))
+        
         props.setIsModalOpen(false);
     }
 
     return (
-        <div className="modal-overlay">
+        <div className="modal-outer">
             <div className="modal-container">
                
                 <div className="modal-header">
