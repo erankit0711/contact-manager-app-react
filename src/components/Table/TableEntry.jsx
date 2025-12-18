@@ -1,13 +1,15 @@
 import { Trash2 } from 'lucide-react';
 import { Pencil } from 'lucide-react';
 import "./Table.css"
-import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contacts/contactSlice';
+import { useState } from 'react';
+import DeleteModal from './DeleteModal';
 
 function TableEntry(props){
-    const dispatch = useDispatch();
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const email = props.email;
+   
     function handleDelete() {
-        dispatch(deleteContact(props.email));
+        setIsDeleteModalOpen(true);
     }
     
     return (
@@ -19,14 +21,14 @@ function TableEntry(props){
             <td>
                 <div className="action-button-container">
                     <button className="action-button" type="button" > 
-                    <Pencil size={16} color='blue'/>
-                    <span>Edit</span>
-                </button>
-                <button className="action-button" type="button" onClick={handleDelete}>
-                    <Trash2 size={16}/>
-                    <span>Delete</span>
-                </button>
-
+                        <Pencil size={16} color='blue'/>
+                        <span>Edit</span>
+                    </button>
+                     <button className="action-button" type="button" onClick={handleDelete}>
+                        <Trash2 size={16}/>
+                        <span>Delete</span>
+                    </button>
+                    {isDeleteModalOpen && <DeleteModal setIsDeleteModalOpen={setIsDeleteModalOpen} email={email}/>}
                 </div>
             </td>
         </tr>

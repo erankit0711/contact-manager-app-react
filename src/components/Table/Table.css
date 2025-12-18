@@ -46,3 +46,86 @@ td{
   gap: 10px;
   justify-content: flex-start;
 }
+
+
+
+.delete-container-outer{
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 1;
+}
+
+.delete-container{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 392px;
+  height: 280px;
+}
+
+.delete-container-top, h1{
+  font-size: 20px;
+  font-weight: 600;
+  color: #334155;
+}
+.delete-container-top{
+  width: 360px;
+  height: 54px;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.delete-container-mid{
+  width: 360px;
+  height: 116px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  padding-top: 16px;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-bottom: 54px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.delete-container-bottom{
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 16px;
+  width: 360px;
+  height: 68px;
+}
+
+.delete-button{
+  height: 36px;
+    width: 156px;
+    border: 0px;
+    border-radius: 4px;
+    color: white;
+    background-color: #E11D48;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cancel-button{
+  height: 36px;
+    width: 156px;
+    border: 0px;
+    border-radius: 4px;
+    color: #006EFA;
+    border: 1px solid #006EFA;
+    background-color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
