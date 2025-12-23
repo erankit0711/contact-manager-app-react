@@ -5,15 +5,12 @@ import AddContactButton from "./AddContactButton/AddContactButton";
 import Search from "./Search/Search";
 import { useState } from "react";
 import AddContactForm from "./AddContactForm/AddContactForm";
-import contactList from "../Utils/contactList";
 
 function ContactManagerPage(){
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
-
     return (
         <div className="contact-page">
-
             <div className="header">
                 <img src={logo} alt="ofbusiness-logo" className="header-logo" />
             </div>

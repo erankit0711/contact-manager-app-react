@@ -24,11 +24,7 @@ function AddContactForm(props) {
 
     function handleSubmit(event) {
         event.preventDefault(); 
-        // props.setContactData((prevValue) => {
-        //     return [...prevValue, contact];
-        // });
         dispatch(addContact(contact))
-        
         props.setIsModalOpen(false);
     }
 
